@@ -26,20 +26,13 @@ const Cont = () => {
           <p className="text-gray-700 mb-1">Tel: (91) 555-0132</p>
           <p className="text-gray-700 mb-6">Email: raghavmandloi2004@gmail.com</p>
 
-          <h3 className="font-semibold text-lg mb-2">Built by Raghav Mandloi</h3>
+          <h3 className="font-semibold text-lg mb-2">Careers at YOKAI</h3>
           <p className="text-gray-700 mb-4">
-            YOKAI is a self-built full-stack e-commerce platform, developed end to end —
-            backend, database, and UI — as an independent project.
+            Learn more about our teams and job openings.
           </p>
-          
-            href="https://github.com/Raghavuchiha"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="border border-black text-black px-6 py-2 rounded-md hover:bg-black hover:text-white transition">
-              View on GitHub
-            </button>
-          </a>
+          <button className="border border-black text-black px-6 py-2 rounded-md hover:bg-black hover:text-white transition">
+            Explore Jobs
+          </button>
         </div>
       </div>
     </section>
