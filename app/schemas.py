@@ -23,3 +23,20 @@ class CartItemIn(BaseModel):
     product_id: str
     size: str
     quantity: int = 1
+
+
+class RefreshTokenRequest(BaseModel):
+    refresh_token: str
+
+
+class ForgotPasswordRequest(BaseModel):
+    email: EmailStr
+
+
+class ResetPasswordRequest(BaseModel):
+    token: str
+    new_password: str = Field(min_length=6, max_length=100)
+
+
+class CartUpdateIn(BaseModel):
+    quantity: int = Field(gt=0)

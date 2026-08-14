@@ -18,3 +18,4 @@ six==1.17.0
 SQLAlchemy==2.0.36
 uvicorn==0.34.0
 supabase==2.15.3
+resend==2.4.0
