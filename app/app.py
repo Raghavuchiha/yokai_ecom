@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routes import auth, profile, products, cart
+from app.routes import admin, auth, profile, products, cart
+
 
 app = FastAPI()
 
@@ -23,3 +24,4 @@ app.include_router(auth.router)
 app.include_router(profile.router)
 app.include_router(products.router)
 app.include_router(cart.router)
+app.include_router(admin.router)
