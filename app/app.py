@@ -14,6 +14,8 @@ app.add_middleware(
         "https://ecom-project-07.vercel.app",
         "https://yokaiecom.vercel.app",
         "https://ecomproject07.vercel.app"
+        "https://yokaiecom.vercel.app/admin/login"
+        
     ],
     allow_credentials=True,
     allow_methods=["*"],
