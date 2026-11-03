@@ -101,6 +101,13 @@ const Login = () => {
             )}
           </div>
 
+          <p
+            onClick={() => navigate("/admin/login")}
+            className="text-sm text-gray-600 cursor-pointer hover:underline"
+          >
+            Admin login
+          </p>
+
           <button
             type="button"
             onClick={handleSubmit}
