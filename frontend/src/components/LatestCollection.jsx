@@ -1,36 +1,28 @@
-import React, { useContext, useEffect, useState } from "react";
-import Title from "./title";
+import React, { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
 import ProductItem from "./productitem";
 
 const LatestCollection = () => {
   const { products } = useContext(ShopContext);
-  const [latestProducts, setLatestProducts] = useState([]);
-
-  useEffect(() => {
-    setLatestProducts(products.slice(0, 10));
-  }, []);
+  const latestProducts = products.slice(0, 10);
 
   return (
-    <div className="my-16">
-      {/* HEADER */}
-      <div className="text-center py-10">
-        <h2 className="text-3xl sm:text-4xl font-semibold tracking-wide">
-          LATEST{" "}
-          <span className="text-3xl sm:text-4xl font-semibold tracking-wide">
-            COLLECTIONS
-          </span>
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 my-20">
+      <div className="text-center mb-10">
+        <h2 className="font-display text-5xl sm:text-6xl">
+          LATEST <span className="text-burgundy">COLLECTIONS</span>
         </h2>
-        
+        <p className="mt-3 text-sm sm:text-base text-ink/60">
+          Fresh drops, made to be worn on repeat.
+        </p>
       </div>
 
-      {/* PRODUCT GRID */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-5 gap-y-10">
         {latestProducts.map((item, index) => (
           <div
-            key={index}
+            key={item._id ?? index}
             className="animate-fadeIn"
-            style={{ animationDelay: `${index * 0.08}s` }}
+            style={{ animationDelay: `${index * 0.06}s` }}
           >
             <ProductItem
               id={item._id}
@@ -41,7 +33,7 @@ const LatestCollection = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

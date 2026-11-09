@@ -22,40 +22,40 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full bg-white shadow-[0_2px_8px_rgba(0,0,0,0.08)] sticky top-0 z-50">
+    <div className="w-full bg-paper border-b border-sage/60 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4">
 
         {/* Logo */}
         <Link
           to="/"
-          className="text-2xl font-bold tracking-wider"
+          className="font-display text-3xl tracking-wider text-burgundy"
         >
           YOKAI
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-6 font-semibold text-sm text-gray-800">
-          <NavLink to="/" className="hover:text-yellow-500 transition">
+        <ul className="hidden md:flex gap-8 font-medium text-sm tracking-widest text-ink">
+          <NavLink to="/" className="hover:text-burgundy transition">
             HOME
           </NavLink>
 
           <NavLink
             to="/collection"
-            className="hover:text-yellow-500 transition"
+            className="hover:text-burgundy transition"
           >
             COLLECTION
           </NavLink>
 
           <NavLink
             to="/about"
-            className="hover:text-yellow-500 transition"
+            className="hover:text-burgundy transition"
           >
             ABOUT
           </NavLink>
 
           <NavLink
             to="/contact"
-            className="hover:text-yellow-500 transition"
+            className="hover:text-burgundy transition"
           >
             CONTACT
           </NavLink>
@@ -65,7 +65,7 @@ const Navbar = () => {
         <div className="flex items-center gap-6">
 
           {/* Search */}
-          <div className="hidden md:flex items-center gap-3 px-4 py-2 bg-gray-100 rounded-md w-64">
+          <div className="hidden md:flex items-center gap-3 px-4 py-2 bg-sage/25 rounded-full w-64">
             <input
               type="text"
               placeholder="Search products..."
@@ -81,9 +81,9 @@ const Navbar = () => {
 
               <Link
                 to="/profile"
-                className="flex items-center gap-2 text-sm font-semibold hover:text-yellow-500"
+                className="flex items-center gap-2 text-sm font-semibold hover:text-burgundy"
               >
-                <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center text-black font-bold">
+                <div className="w-8 h-8 rounded-full bg-burgundy flex items-center justify-center text-cream font-bold">
                   {user.username?.[0]?.toUpperCase() || "U"}
                 </div>
 
@@ -94,7 +94,7 @@ const Navbar = () => {
 
               <button
                 onClick={handleLogout}
-                className="text-sm font-semibold text-gray-600 hover:text-red-500 transition"
+                className="text-sm font-semibold text-ink/70 hover:text-burgundy transition"
               >
                 LOGOUT
               </button>
@@ -102,7 +102,7 @@ const Navbar = () => {
           ) : (
             <Link
               to="/login"
-              className="text-sm font-semibold hover:text-yellow-500 transition"
+              className="text-sm font-semibold hover:text-burgundy transition"
             >
               LOGIN
             </Link>
@@ -116,7 +116,7 @@ const Navbar = () => {
               alt="cart"
             />
 
-            <p className="absolute right-[-6px] top-[-6px] w-4 text-center bg-yellow-400 text-black rounded-full text-[10px] font-bold">
+            <p className="absolute right-[-6px] top-[-6px] w-4 text-center bg-burgundy text-cream rounded-full text-[10px] font-bold">
               {getCartCount()}
             </p>
           </Link>
@@ -133,11 +133,11 @@ const Navbar = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-xl transition-transform duration-300 z-50 ${
+        className={`fixed top-0 right-0 h-full w-64 bg-paper shadow-xl transition-transform duration-300 z-50 ${
           visible ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex flex-col text-gray-600 h-full">
+        <div className="flex flex-col text-ink h-full">
 
           {/* Back */}
           <div
