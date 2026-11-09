@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { ShopContext } from "../context/ShopContext";
 import API_URL from "../config";
@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { setToken } = useContext(ShopContext);
 
   const [currentState, setCurrentState] = useState("Login");
@@ -41,7 +42,7 @@ const Login = () => {
         setToken(response.data.access_token);  // ← tells ShopContext user is logged in
 
         toast.success("Welcome back!");
-        navigate("/");
+        navigate(location.state?.from || "/");
       }
     } catch (error) {
       toast.error(error.response?.data?.detail || "Something went wrong");

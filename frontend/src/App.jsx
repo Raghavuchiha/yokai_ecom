@@ -20,6 +20,7 @@ import AdminLogin from './admin/AdminLogin'
 import AdminRoute from './admin/AdminRoute'
 import AdminDashboard from './admin/AdminDashboard'
 import AdminTable from './admin/AdminTable'
+import ProtectedRoute from './components/ProtectedRoute'
   import { ToastContainer, toast } from 'react-toastify';
 
 const App = () => {
@@ -37,11 +38,13 @@ const App = () => {
          <Route path = '/about' element={<About/>} />
          <Route path = '/contact' element={<Contact/>} />
          <Route path = '/product/:productID' element={<Product/>} />
-         <Route path = '/cart' element={<Cart/>} />
          <Route path = '/Login' element={<Login/>} />
-         <Route path = '/place-order' element={<PlaceOrder/>} />
-         <Route path = '/Orders' element={<Orders/>} />
-         <Route path="/profile" element={<Profile />} />
+         <Route element={<ProtectedRoute />}>
+           <Route path = '/cart' element={<Cart/>} />
+           <Route path = '/place-order' element={<PlaceOrder/>} />
+           <Route path = '/Orders' element={<Orders/>} />
+           <Route path="/profile" element={<Profile />} />
+         </Route>
          <Route path="/admin/login" element={<AdminLogin />} />
          <Route element={<AdminRoute />}>
            <Route path="/admin" element={<AdminDashboard />} />

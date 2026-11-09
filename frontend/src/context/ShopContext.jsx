@@ -81,6 +81,11 @@ const ShopContextProvider = (props) => {
 
   // add to cart — calls backend if logged in
   const addToCart = async (itemId, size) => {
+    if (!token) {
+      toast.error("Please log in to add items to your cart");
+      navigate("/login");
+      return;
+    }
     if (!size) {
       toast.error("Select Product Size");
       return;
